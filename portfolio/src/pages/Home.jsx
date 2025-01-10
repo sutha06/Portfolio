@@ -11,4 +11,3 @@ const Home = () => {
 // const WrappedHome = Transition(Home);
 
 export default Home;
-s;
