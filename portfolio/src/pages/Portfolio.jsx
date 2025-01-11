@@ -1,5 +1,4 @@
 import React from "react";
-// import Transition from "../components/Transition";
 
 const Portfolio = () => {
   return (
@@ -8,7 +7,5 @@ const Portfolio = () => {
     </div>
   );
 };
-
-// const WrappedPortfolio = Transition(Portfolio);
 
 export default Portfolio;

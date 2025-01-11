@@ -1,5 +1,4 @@
 import React from "react";
-// import Transition from "../components/Transition";
 
 const Contact = () => {
   return (
@@ -8,7 +7,5 @@ const Contact = () => {
     </div>
   );
 };
-
-// const WrappedContact = Transition(Contact);
 
 export default Contact;

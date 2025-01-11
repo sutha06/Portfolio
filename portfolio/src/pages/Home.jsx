@@ -1,5 +1,4 @@
 import React from "react";
-// import Transition from "../components/Transition";
 const Home = () => {
   return (
     <div>
@@ -7,7 +6,5 @@ const Home = () => {
     </div>
   );
 };
-
-// const WrappedHome = Transition(Home);
 
 export default Home;

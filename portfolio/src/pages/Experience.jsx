@@ -1,5 +1,4 @@
 import React from "react";
-// import Transition from "../components/Transition";
 
 const Experience = () => {
   return (
@@ -8,7 +7,5 @@ const Experience = () => {
     </div>
   );
 };
-
-// const WrappedExperience = Transition(Experience);
 
 export default Experience;
