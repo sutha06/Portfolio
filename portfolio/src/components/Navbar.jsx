@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./../styles/Navbar.css";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="absolute top-6 left-6 flex justify-between w-full px-8">
-      <div className="text-gray-400 text-lg font-bold">
-        <Link to="/" className="hover:text-white transition-colors">
+    <nav className="navbar">
+      {/* Logo */}
+      <div className="navbar-logo">
+        <Link to="/" className="hover-link">
           Sutha.
         </Link>
       </div>
-      <div className="flex space-x-8 text-gray-400">
-        <Link to="/" className="hover:text-white transition-colors">
+
+      {/* Hamburger Menu for Mobile */}
+      <div className="menu-toggle" onClick={toggleMenu}>
+        <div className={`hamburger ${isMenuOpen ? "open" : ""}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      {/* Links */}
+      <div className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
+        <Link to="/" className="hover-link" onClick={toggleMenu}>
           Home
         </Link>
-        <Link to="/portfolio" className="hover:text-white transition-colors">
+        <Link to="/portfolio" className="hover-link" onClick={toggleMenu}>
           Portfolio
         </Link>
-        <Link to="/contact" className="hover:text-white transition-colors">
+        <Link to="/contact" className="hover-link" onClick={toggleMenu}>
           Contact
         </Link>
-        <Link to="/experience" className="hover:text-white transition-colors">
+        <Link to="/experience" className="hover-link" onClick={toggleMenu}>
           Experience
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 

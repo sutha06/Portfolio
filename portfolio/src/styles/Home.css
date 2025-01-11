@@ -1,0 +1,46 @@
+/* Home.css */
+.home-container {
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #ccc;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #fff;
+  font-weight: bold;
+}
+
+.home-button {
+  margin-top: 20px;
+}
+
+.cta-button {
+  background-color: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Prevent overflow */
+body {
+  overflow: hidden;
+}

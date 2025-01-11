@@ -1,21 +1,21 @@
-// Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import "./../styles/Home.css";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+    <div className="home-container">
       {/* Main Heading */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center mt-32 sm:mt-48"
+        className="text-center"
       >
-        <h1 className="text-4xl sm:text-6xl font-light text-gray-400 leading-tight">
-          Designing with <span className="text-white font-bold">Purpose,</span>
+        <h1 className="main-heading">
+          Designing with <span className="highlight">Purpose,</span>
           <br />
-          Building with <span className="text-white font-bold">Care.</span>
+          Building with <span className="highlight">Care.</span>
         </h1>
       </motion.div>
 
@@ -24,9 +24,9 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="mt-10 sm:mt-20"
+        className="home-button"
       >
-        <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium flex items-center gap-2 hover:bg-gray-200">
+        <button className="cta-button">
           Hi, I'm Sutha <span>👋</span>
         </button>
       </motion.div>
