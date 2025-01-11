@@ -2,51 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reset margins and padding to prevent overflow */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #0f0f0f;
 }
 
+/* Prevent horizontal scroll overflow */
 html,
 body {
-  font-family: "Roslindale Display Condensed";
-  background: c6d5c6;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Roslindale Display Condensed", sans-serif;
+  background-color: #000; /* Updated to match the dark background */
 }
 
+/* Navbar styling fix */
 .nav {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.9); /* Optional: Add background to navbar */
 }
 
-.nav-link {
-  display: flex;
-}
-
-.logo,
-.nav-item {
-  margin: 2em;
-  font-weight: 400;
-  font-size: 1.5vw;
-}
-
+/* Adjust heading styles */
 h1 {
   width: 80%;
+  max-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-weight: 500;
-  font-size: 10vw;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 500;
+  font-size: clamp(2rem, 8vw, 6rem);
+  line-height: 1.2;
 }
