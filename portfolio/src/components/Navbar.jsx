@@ -35,11 +35,11 @@ const Navbar = () => {
         <Link to="/portfolio" className="hover-link" onClick={toggleMenu}>
           Portfolio
         </Link>
-        <Link to="/contact" className="hover-link" onClick={toggleMenu}>
-          Contact
-        </Link>
         <Link to="/experience" className="hover-link" onClick={toggleMenu}>
           Experience
+        </Link>
+        <Link to="/contact" className="hover-link" onClick={toggleMenu}>
+          Contact
         </Link>
       </div>
     </nav>
