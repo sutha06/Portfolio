@@ -1,11 +1,12 @@
 /* Home.css */
 .home-container {
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .main-heading {
@@ -38,6 +39,37 @@
 
 .cta-button:hover {
   background-color: #f0f0f0;
+}
+
+/* Email Icon Styling */
+.email-icon {
+  position: fixed;
+  bottom: 2.8rem; /* Adjust this to align it properly */
+  right: 2.8rem; /* Adjust this to match the animated icon */
+  color: #ccc;
+  font-size: 2.4rem; /* Increased size for better visibility */
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.email-icon:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Positioning the Lottie animation in the bottom-left corner */
+.bottom-left-animation {
+  position: fixed;
+  bottom: 2.2rem;
+  left: 2.8rem;
+  z-index: 10;
+  cursor: pointer;
+  transform: scale(0.6); /* Slightly reduced size */
+  transition: transform 0.3s ease-in-out;
+}
+
+.bottom-left-animation:hover {
+  transform: scale(1.1);
 }
 
 /* Prevent overflow */

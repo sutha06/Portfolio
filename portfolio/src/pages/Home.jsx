@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaEnvelope } from "react-icons/fa";
+import Lottie from "react-lottie-player"; // If using Lottie
+import animationData from "./../assets/animation.json"; // Your Lottie file
 import "./../styles/Home.css";
 
 const Home = () => {
@@ -30,6 +33,27 @@ const Home = () => {
           Hi, I'm Sutha <span>👋</span>
         </button>
       </motion.div>
+
+      {/* Email Icon in Bottom Right Corner */}
+      <div className="bottom-right-email">
+        <a
+          href="mailto:suthakaran.siva0601@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaEnvelope className="email-icon" />
+        </a>
+      </div>
+
+      {/* Lottie Animation (Optional) */}
+      <div className="bottom-left-animation">
+        <Lottie
+          loop
+          animationData={animationData}
+          play
+          style={{ width: 80, height: 80 }}
+        />
+      </div>
     </div>
   );
 };

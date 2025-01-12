@@ -17,6 +17,7 @@ body {
   font-family: "Roslindale Display Condensed", sans-serif;
   background-color: #000;
   color: #fff;
+  overflow: hidden;
 }
 
 /* Navbar Styling */
