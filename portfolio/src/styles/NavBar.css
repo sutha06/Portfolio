@@ -13,7 +13,7 @@
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #fff;
   font-family: "Unbounded", sans-serif;
@@ -36,12 +36,12 @@
 .hamburger {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .hamburger span {
-  width: 28px;
-  height: 2.5px;
+  width: 30px;
+  height: 3px;
   background-color: #fff;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
@@ -87,8 +87,8 @@
 }
 
 .navbar-links li {
-  margin: 20px 0;
-  font-size: 2rem;
+  margin: 30px 0;
+  font-size: 2.5rem; /* Increased font size */
   font-family: "Unbounded", sans-serif;
   font-weight: bold;
   transform: translateY(120px);
@@ -101,38 +101,41 @@
   opacity: 1;
 }
 
-/* Hover Effect for Animation */
-.hover-item {
-  position: relative;
-  overflow: hidden;
+/* Hover Effect for Nav Links */
+.navbar-links a {
   color: #666;
-}
-
-.hover-item a {
-  font-size: 2rem;
   text-decoration: none;
-  display: inline-block;
-  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.navbar-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Active/Selected Link Styling */
 .hover-item.active a,
 .hover-item:hover a {
-  font-size: 2.5rem;
   color: #fff;
+  transform: scale(1.15);
 }
 
-/* Add a vertical line before the hovered item */
-.hover-item.active::before,
-.hover-item:hover::before {
+/* Vertical Line Animation on Hover */
+.hover-item::before {
   content: "";
   position: absolute;
   left: -20px;
-  height: 100%;
+  height: 0;
   width: 4px;
   background-color: #fff;
-  animation: grow 0.3s ease forwards;
+  transition: height 0.3s ease-in-out;
 }
 
+.hover-item:hover::before {
+  height: 100%;
+}
+
+/* Keyframe Animation for Line Growth */
 @keyframes grow {
   from {
     height: 0;
@@ -154,5 +157,10 @@
 
   .navbar-overlay.open {
     display: flex;
+  }
+
+  .navbar-links li {
+    font-size: 2rem; /* Slightly smaller for mobile */
+    margin: 20px 0;
   }
 }
