@@ -12,6 +12,7 @@
   z-index: 1000;
 }
 
+/* Logo Styling */
 .navbar-logo {
   font-size: 2rem;
   font-weight: bold;
@@ -19,15 +20,10 @@
   font-family: "Unbounded", sans-serif;
 }
 
-.navbar-logo a {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* Hamburger Menu Styling */
 .menu-toggle {
   position: fixed;
-  top: 1.5rem;
+  top: 1.8rem;
   right: 2rem;
   z-index: 1100;
   cursor: pointer;
@@ -36,11 +32,12 @@
 .hamburger {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
+  position: relative;
 }
 
 .hamburger span {
-  width: 30px;
+  width: 32px;
   height: 3px;
   background-color: #fff;
   border-radius: 3px;
@@ -48,7 +45,7 @@
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(3px, 3px);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -56,7 +53,7 @@
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(3px, -3px);
 }
 
 /* Full-Screen Overlay Menu */
@@ -88,9 +85,10 @@
 
 .navbar-links li {
   margin: 30px 0;
-  font-size: 2.5rem; /* Increased font size */
+  font-size: 2.5rem;
   font-family: "Unbounded", sans-serif;
   font-weight: bold;
+  position: relative;
   transform: translateY(120px);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.8s ease-in-out;
@@ -102,47 +100,39 @@
 }
 
 /* Hover Effect for Nav Links */
-.navbar-links a {
+.navbar-links li a {
   color: #666;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
 
-.navbar-links a:hover {
+/* Enlarge and change color on hover */
+.navbar-links li:hover a {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-/* Active/Selected Link Styling */
-.hover-item.active a,
-.hover-item:hover a {
-  color: #fff;
-  transform: scale(1.15);
+/* Ensure Other Links Stay Grey */
+.navbar-links li:not(:hover) a {
+  color: #666;
+  transform: scale(1);
 }
 
 /* Vertical Line Animation on Hover */
-.hover-item::before {
+.navbar-links li a::before {
   content: "";
   position: absolute;
-  left: -20px;
+  left: -26px; /* Adjusted to keep the line aligned */
   height: 0;
   width: 4px;
   background-color: #fff;
   transition: height 0.3s ease-in-out;
 }
 
-.hover-item:hover::before {
+.navbar-links li:hover a::before {
   height: 100%;
-}
-
-/* Keyframe Animation for Line Growth */
-@keyframes grow {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
 }
 
 /* Mobile Styling */
@@ -160,7 +150,7 @@
   }
 
   .navbar-links li {
-    font-size: 2rem; /* Slightly smaller for mobile */
+    font-size: 2rem;
     margin: 20px 0;
   }
 }

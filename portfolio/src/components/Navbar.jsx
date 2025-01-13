@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className={`navbar-overlay ${isMenuOpen ? "open" : ""}`}>
         <ul className="navbar-links">
           <li
-            className="hover-item"
+            className={`hover-item ${isMenuOpen ? "active" : ""}`}
             style={{
               transform: isMenuOpen ? "translateY(0)" : "translateY(120px)",
               transitionDelay: isMenuOpen ? "0.8s" : "0s",
@@ -42,7 +42,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className="hover-item"
+            className={`hover-item ${isMenuOpen ? "active" : ""}`}
             style={{
               transform: isMenuOpen ? "translateY(0)" : "translateY(120px)",
               transitionDelay: isMenuOpen ? "0.9s" : "0s",
@@ -53,7 +53,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className="hover-item"
+            className={`hover-item ${isMenuOpen ? "active" : ""}`}
             style={{
               transform: isMenuOpen ? "translateY(0)" : "translateY(120px)",
               transitionDelay: isMenuOpen ? "1s" : "0s",
@@ -64,7 +64,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className="hover-item"
+            className={`hover-item ${isMenuOpen ? "active" : ""}`}
             style={{
               transform: isMenuOpen ? "translateY(0)" : "translateY(120px)",
               transitionDelay: isMenuOpen ? "1.1s" : "0s",
