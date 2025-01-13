@@ -16,6 +16,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
+  font-family: "Unbounded", sans-serif;
 }
 
 .navbar-logo a {
@@ -23,6 +24,7 @@
   color: inherit;
 }
 
+/* Hamburger Menu Styling */
 .menu-toggle {
   position: fixed;
   top: 1.5rem;
@@ -38,8 +40,8 @@
 }
 
 .hamburger span {
-  width: 30px;
-  height: 3px;
+  width: 28px;
+  height: 2.5px;
   background-color: #fff;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
@@ -87,6 +89,7 @@
 .navbar-links li {
   margin: 20px 0;
   font-size: 2rem;
+  font-family: "Unbounded", sans-serif;
   font-weight: bold;
   transform: translateY(120px);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
@@ -98,31 +101,58 @@
   opacity: 1;
 }
 
-/* Social Media Footer */
-.nav-footer {
-  position: absolute;
-  bottom: 3rem;
-  width: 100%;
-  text-align: center;
-  color: #aaa;
+/* Hover Effect for Animation */
+.hover-item {
+  position: relative;
+  overflow: hidden;
+  color: #666;
 }
 
-.nav-social-media ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.nav-social-media ul li a {
-  color: #fff;
+.hover-item a {
+  font-size: 2rem;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
 
-.nav-social-media ul li a:hover {
-  color: #aaa;
+.hover-item.active a,
+.hover-item:hover a {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/* Add a vertical line before the hovered item */
+.hover-item.active::before,
+.hover-item:hover::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  height: 100%;
+  width: 4px;
+  background-color: #fff;
+  animation: grow 0.3s ease forwards;
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+  }
+
+  .navbar-overlay.open {
+    display: flex;
+  }
 }
